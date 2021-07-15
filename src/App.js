@@ -8,24 +8,13 @@ import './App.css';
 
 class App extends React.Component {
   render() {
-    // you may only return one parent
     return (
       <>
         <Header />
-        <img src="./horn-beatle.jpeg" alt="discription"></img>
-        <Main 
-          title="Little Beast"
-          description="These are horn Beatles!" 
-        />
-        <img src="./rhino-beatle.jpeg" alt="discription"></img>
-        <Main 
-          title="Another Little Beast"
-          description=" another Horn Beatle Hanging!" 
-        />
+        <Main/>        
         <Footer />
       </>
     )
   }
 }
-
 export default App;
