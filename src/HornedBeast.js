@@ -1,7 +1,7 @@
 import React from 'react';
 import './HornedBeast.css';
 
-class HornedBeast extends React.Component{
+class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,12 +9,24 @@ class HornedBeast extends React.Component{
     };
   }
 
-  likeCounterClicked = ()=> {
-    this.setState({likeCounter: this.state.likeCounter + 1})
+  plusOne = () => {
+    this.setState({
+      likeCounter: this.state.likeCounter + 1,
+    })
+  }
+
+  subOne = () => {
+    this.setState({
+      likeCounter:  this.state.likeCounter - 1,
+    })
+  }
+
+  likeCounterClicked = () => {
+    this.setState({ likeCounter: this.state.likeCounter + 1 })
   };
 
-  render(){
-    return(
+  render() {
+    return (
       <section>
         <h2>{this.props.title}</h2>
         <img onClick={this.likeCounterClicked} src={this.props.imageUrl} alt={this.props.title}></img>
@@ -23,6 +35,9 @@ class HornedBeast extends React.Component{
         <p>
           {this.state.likeCounter}
         </p>
+        <button onClick={this.plusOne}>plusOne </button>
+        <button onClick={this.subOne}>subOne </button>
+
       </section>
     )
   }
