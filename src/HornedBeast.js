@@ -1,5 +1,7 @@
 import React from 'react';
 import './HornedBeast.css';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -27,18 +29,18 @@ class HornedBeast extends React.Component {
 
   render() {
     return (
-      <section>
-        <h2>{this.props.title}</h2>
-        <img onClick={this.likeCounterClicked} src={this.props.imageUrl} alt={this.props.title}></img>
-        <p>{this.props.description}</p>
-        {/* displays the value if state */}
-        <p>
-          {this.state.likeCounter}
-        </p>
-        <button onClick={this.plusOne}>plusOne </button>
-        <button onClick={this.subOne}>subOne </button>
-
-      </section>
+      <Card style={{width: "33rem", height: "33rem"}}>
+        <Card.Img variant="top" onClick={this.likeCounterClicked} src={this.props.imageUrl} alt={this.props.title} />
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>
+          {this.props.description}
+          <p>{this.state.likeCounter}</p>
+          </Card.Text>
+        </Card.Body>
+        <Button variant="success" onClick={this.plusOne}>plusOne </Button>
+        <Button variant="outline-primary" onClick={this.subOne}>subOne </Button>
+      </Card>
     )
   }
 }
