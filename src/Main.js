@@ -1,6 +1,5 @@
 import React from 'react';
 import HornedBeast from "./HornedBeast";
-// import dataBeasts from './data.json';
 import Button from 'react-bootstrap/Button';
 import CardColumns from 'react-bootstrap/CardColumns';
 import { Row } from 'react-bootstrap';
