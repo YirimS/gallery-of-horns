@@ -8,22 +8,32 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      balance: 100,
+      balance: 500,
     }
   }
 
-  walletBalance = () => {
-    this.setState({
-      balance: this.state.balance - 5,
-    });
+  walletBalance = (test) => {
+    if (test === 'subtract'){
+
+      this.setState({
+        balance: this.state.balance - 5,
+      });
+    }
+    if (test === 'add'){
+  
+      this.setState({
+        balance: this.state.balance + 5,
+      });
+    }
   }
+
 
   render() {
     return (
       <main>
         <Button variant="success">Click</Button>
         <CardColumns>
-
+ 
           <h3>balance: ${this.state.balance}</h3>
 
           <Row xs={1} md={2}>
