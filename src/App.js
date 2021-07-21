@@ -13,16 +13,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
+      showModal: true,
     }
+  }
+
+  handleShowModal = () => {
+    this.setState({
+      showModal: true,
+    });
   }
 
   render() {
     return (
       <>
         <Header />
-        <Modal showModal={this.state.showModal}>
-          <Modal.Title>Proof of Life</Modal.Title>
+        <Modal show={this.state.showModal}>
+          <Modal.Header>
+            <Modal.Title>Proof of Life</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>This is the body of the</Modal.Body>
         </Modal>
         <Main data={data} />
         <Footer />
