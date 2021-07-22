@@ -8,19 +8,21 @@ class HornedBeast extends React.Component {
     super(props);
     this.state = {
       likeCounter: 0
-    };
+      // showFavorite: true,
+    }
   }
 
   plusOne = () => {
     this.setState({
       likeCounter: this.state.likeCounter + 1,
-    })
+    });
+    this.props.handleMyWallet();
   }
 
   subOne = () => {
     this.setState({
-      likeCounter:  this.state.likeCounter - 1,
-    })
+      likeCounter: this.state.likeCounter - 1,
+    });
   }
 
   likeCounterClicked = () => {
@@ -29,15 +31,18 @@ class HornedBeast extends React.Component {
 
   render() {
     return (
-      <Card style={{width: "33rem", height: "33rem"}}>
+      <Card style={{ width: "33rem", height: "33rem" }}>
+
         <Card.Img variant="top" onClick={this.likeCounterClicked} src={this.props.imageUrl} alt={this.props.title} />
+
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>
-          {this.props.description}
-          <p>{this.state.likeCounter}</p>
+            {this.props.description}
+            <p>{this.state.likeCounter}</p>
           </Card.Text>
         </Card.Body>
+
         <Button variant="success" onClick={this.plusOne}>plusOne </Button>
         <Button variant="outline-primary" onClick={this.subOne}>subOne </Button>
       </Card>
