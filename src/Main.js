@@ -40,6 +40,7 @@ manageMyWallet = () => {
             ))}
           </Row>
         </CardColumns>
+        {HornedBeast}
       </main>
     )
 

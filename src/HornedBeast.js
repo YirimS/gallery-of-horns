@@ -29,6 +29,12 @@ class HornedBeast extends React.Component {
     this.setState({ likeCounter: this.state.likeCounter + 1 })
   };
 
+  favorite = () => {
+    this.setState({
+      showFavorite: true,
+    });
+  }
+
   render() {
     return (
       <Card style={{ width: "33rem", height: "33rem" }}>
@@ -40,6 +46,8 @@ class HornedBeast extends React.Component {
           <Card.Text>
             {this.props.description}
             <p>{this.state.likeCounter}</p>
+
+            <p></p>
           </Card.Text>
         </Card.Body>
 
