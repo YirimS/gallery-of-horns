@@ -46,10 +46,12 @@ class HornedBeast extends React.Component {
           <Card.Text>
             {this.props.description}
             <p>{this.state.likeCounter}</p>
-
-            <p></p>
           </Card.Text>
         </Card.Body>
+
+<p>{this.state.showFavorite ? '' : ''}</p>
+
+<p onClick={this.favorite}>{this.props.description}</p>
 
         <Button variant="success" onClick={this.plusOne}>plusOne </Button>
         <Button variant="outline-primary" onClick={this.subOne}>subOne </Button>
